@@ -1,7 +1,7 @@
 package matt;
 import java.util.Scanner;
 /**
- * Hello world!
+ * Programm liest String ein und gibt den String toUpperCase() aus!
  *
  */
 public class App 
