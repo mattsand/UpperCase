@@ -5,7 +5,7 @@ public class UtilTest {
 	@Test
 	public void TestistErstesHalbjahr(){
 		final boolean sollwert = true;
-		final int eingabe = 7;
+		final int eingabe = 5;
 		
 		assertEquals(sollwert,Util.istErstesHalbjahr(eingabe));
 	}
