@@ -1,0 +1,35 @@
+package matt;
+
+import org.junit.Test;
+import domain.Resident;
+import java.util.Date;
+import service.*;
+
+public class IntegrationsTest{
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	public void IntegrationTest(){
+		ResidentRepositoryStub stub = new ResidentRepositoryStub();
+		Resident hans = new Resident("Hans","Walter","Fakestr.","Fakecity",new Date(1992,12,12));
+		stub.newResident(hans);
+		
+		Resident franz = new Resident("Franz","Mueller","Breitestr.","Falschestadt", new Date(1982,11,11));
+		stub.newResident(franz);
+		
+		Resident jockel = new Resident("Jockel","Dockel","Kurzestr.","Richtigestadt", new Date(1911,3,3));
+		stub.newResident(jockel);
+		
+		Resident bernd = new Resident("Bernd","Hansel","Wasserstr.","UnterWasser", new Date(1954,9,9));
+		stub.newResident(bernd);
+		
+		BaseResidentService BRS = new BaseResidentService();
+		
+		BRS.setResidentRepository(stub);
+		
+		BRS.getFilteredResidentsList(hans);
+		
+		
+		
+	}
+}
